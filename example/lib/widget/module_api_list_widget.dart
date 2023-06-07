@@ -19,6 +19,7 @@ class ModuleApiListWidget extends StatelessWidget {
     ApiEnum.padding,
     ApiEnum.richText,
     ApiEnum.barcode,
+    ApiEnum.img,
     ApiEnum.ifElse,
   ];
 

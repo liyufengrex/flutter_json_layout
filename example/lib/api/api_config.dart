@@ -9,6 +9,7 @@ enum ApiEnum {
   padding,
   richText,
   barcode,
+  img,
   ifElse,
 }
 
@@ -35,6 +36,8 @@ extension ExApiEnum on ApiEnum {
         return 'richText';
       case ApiEnum.barcode:
         return 'barcode';
+      case ApiEnum.img:
+        return 'img';
       case ApiEnum.ifElse:
         return 'if-else';
     }
@@ -62,6 +65,8 @@ extension ExApiEnum on ApiEnum {
         return 'richText（字号自适应的富文本控件）';
       case ApiEnum.barcode:
         return 'barcode（二维码控件）';
+      case ApiEnum.img:
+        return 'img（图片控件）';
       case ApiEnum.ifElse:
         return 'if-else（条件控件）';
     }
@@ -154,6 +159,12 @@ extension ExApiEnum on ApiEnum {
 	      . width: 二维码的像素宽度
 	      . height: 二维码的像素高度
 	      . text: 文本控件，内容为二维码的内容体
+        ''';
+      case ApiEnum.img:
+        return '''
+	      . width: 图片的像素宽度
+	      . height: 图片的像素高度
+	      . url: 图片的网络路径
         ''';
       case ApiEnum.ifElse:
         return '''
@@ -436,6 +447,15 @@ extension ExApiEnum on ApiEnum {
           "lineHeight": null,
           "fontWeight": "4"
         }
+      }
+        ''';
+      case ApiEnum.img:
+        return '''
+      {
+        "type": "img",
+        "width": 100,
+        "height": 100,
+        "url": "https://pd-saas-oss.pin-dao.cn/tenantadmin/1661152305171.jpg"
       }
         ''';
       case ApiEnum.ifElse:

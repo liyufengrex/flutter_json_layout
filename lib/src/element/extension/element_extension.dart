@@ -25,6 +25,8 @@ extension ExDynamicElementType on DynamicElementType {
         return 'padding';
       case DynamicElementType.barcode:
         return 'barcode';
+      case DynamicElementType.img:
+        return 'img';
       case DynamicElementType.ifElse:
         return 'if-else';
     }

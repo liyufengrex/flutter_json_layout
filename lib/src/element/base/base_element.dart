@@ -42,5 +42,6 @@ enum DynamicElementType {
   divider,
   padding,
   barcode,
+  img,
   ifElse, //逻辑操作元素
 }

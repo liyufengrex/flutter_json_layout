@@ -8,6 +8,7 @@ import '../element/divider_element.dart';
 import '../element/empty_element.dart';
 import '../element/flex_element.dart';
 import '../element/if_else_element.dart';
+import '../element/img_element.dart';
 import '../element/padding_element.dart';
 import '../element/rich_element.dart';
 import '../element/row_element.dart';
@@ -116,6 +117,9 @@ abstract class DynamicElementParseTool {
     } else if (type == DynamicElementType.barcode.key) {
       //二维码
       return BarcodeContainer.fromMap(json);
+    } else if (type == DynamicElementType.img.key) {
+      //图片
+      return ImgContainer.fromMap(json);
     } else if (type == DynamicElementType.ifElse.key) {
       //if - else 条件判断
       return IfElseCandidate.fromMap(json);

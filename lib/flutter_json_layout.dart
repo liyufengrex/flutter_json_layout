@@ -12,6 +12,7 @@ export 'src/element/rich_element.dart';
 export 'src/element/row_element.dart';
 export 'src/element/size_element.dart';
 export 'src/element/text_element.dart';
+export 'src/element/img_element.dart';
 export 'src/factory/dynamic_temp_factory.dart';
 export 'src/data_mapping/data_mapping_interface.dart';
 export 'src/dynamic_json_layout.dart';

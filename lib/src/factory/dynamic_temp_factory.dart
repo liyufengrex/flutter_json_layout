@@ -1,5 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:barcode_widget/barcode_widget.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../data_mapping/data_mapping_interface.dart';
@@ -10,11 +12,13 @@ import '../element/colum_element.dart';
 import '../element/divider_element.dart';
 import '../element/flex_element.dart';
 import '../element/if_else_element.dart';
+import '../element/img_element.dart';
 import '../element/padding_element.dart';
 import '../element/rich_element.dart';
 import '../element/row_element.dart';
 import '../element/size_element.dart';
 import '../element/text_element.dart';
+import '../widget/web/web_image_widget.dart';
 
 typedef OnElementSelect = void Function(TempBaseElement baseElement);
 
@@ -100,6 +104,11 @@ class _DynamicLayoutWidget<T> extends StatelessWidget {
       case DynamicElementType.barcode:
         return _buildBarcodeElement(
           element as BarcodeContainer,
+          data,
+        );
+      case DynamicElementType.img:
+        return _buildImgElement(
+          element as ImgContainer,
           data,
         );
       case DynamicElementType.ifElse:
@@ -286,6 +295,26 @@ class _DynamicLayoutWidget<T> extends StatelessWidget {
       width: barcodeConfig.width.w,
       height: barcodeConfig.height.w,
     );
+  }
+
+  Widget _buildImgElement(ImgContainer imgContainer, T data) {
+    final url = dataMapping.matchKeyValue(
+      data,
+      textKey: imgContainer.url,
+    );
+    if (kIsWeb) {
+      return WebImageWidget(
+        url: url,
+        width: imgContainer.width.w,
+        height: imgContainer.height.w,
+      );
+    } else {
+      return CachedNetworkImage(
+        imageUrl: url,
+        height: imgContainer.height.w,
+        width: imgContainer.width.w,
+      );
+    }
   }
 
   @override

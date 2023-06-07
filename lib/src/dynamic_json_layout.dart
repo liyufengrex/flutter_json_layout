@@ -80,5 +80,3 @@ class DynamicJsonBuilder extends DynamicTempFactory<PDDartJson> {
     );
   }
 }
-
-// 数据映射
