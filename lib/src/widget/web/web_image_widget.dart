@@ -1,6 +1,5 @@
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
 import 'original_ui.dart' if (dart.library.html) 'real_ui.dart' as ui;
+import 'original_element.dart' if (dart.library.html) 'dart:html' as element;
 import 'package:flutter/material.dart';
 
 /// web 上加载图片的控件
@@ -19,7 +18,7 @@ class WebImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     ui.platformViewRegistry.registerViewFactory(
       url,
-      (int _) => ImageElement()..src = url,
+      (int _) => element.ImageElement()..src = url,
     );
     return SizedBox(
       width: width,
