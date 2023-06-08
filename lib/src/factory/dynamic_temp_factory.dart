@@ -167,7 +167,11 @@ class _DynamicLayoutWidget<T> extends StatelessWidget {
     if (onElementSelect == null) {
       return child;
     } else {
-      return GestureDetector(
+      return InkWell(
+        focusColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        hoverColor: const Color(0x0818a7fb),
         onTap: () {
           onElementSelect!(textConfig);
         },
@@ -212,7 +216,11 @@ class _DynamicLayoutWidget<T> extends StatelessWidget {
     if (onElementSelect == null) {
       return child;
     } else {
-      return GestureDetector(
+      return InkWell(
+        focusColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        hoverColor: const Color(0x0818a7fb),
         onTap: () {
           onElementSelect!(autoTextConfig);
         },
