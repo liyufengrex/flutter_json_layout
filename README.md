@@ -16,6 +16,8 @@ DynamicJsonLayout(
 
 [点击预览效果](https://liyufengrex.github.io/flutter_json_layout_preview/)
 
+备用地址：https://flutter-json-layout.web.app/
+
 该库持续完善中...
 
 
