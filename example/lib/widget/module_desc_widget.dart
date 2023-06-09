@@ -7,16 +7,12 @@ class ModuleDescWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GroupWidget([
-      const GroupTitle('概念', fontSize: 15),
-      SizedBox(height: 10.w),
-      const DescText('动态下发票据布局模版，在客户端进行数据组装后，用于打印业务：'),
-      SizedBox(height: 10.w),
-      const DescText('1. 动态模板包含两个部分：布局文件和数据文件'),
-      const DescText('2. 对于后管，需要动态下发的就是布局文件'),
-      const DescText('3. 布局文件 JSON 结构如下：'),
-      SizedBox(height: 15.w),
-      const JsonContainer('''
+    return HomeGroupWidget(
+      flex: 3,
+      title: '概念',
+      desc: '动态下发票据布局模版，在客户端进行数据组装后，用于打印业务：\n\n1. 动态模板包含两个部分：布局文件和数据文件\n2. 对于后管，需要动态下发的就是布局文件\n3. 布局文件 JSON 结构如下：',
+      items: [
+        const JsonContainer('''
       {
 	        "id": "1", 
 	        "name": "45mm * 70mm",
@@ -27,8 +23,8 @@ class ModuleDescWidget extends StatelessWidget {
 	        "content": [] 
       }
         '''),
-      SizedBox(height: 5.w),
-      const JsonContainer('''
+        SizedBox(height: 10.w),
+        const JsonContainer('''
       {
 	        模版id,
 	        模板尺寸描述文件
@@ -39,6 +35,7 @@ class ModuleDescWidget extends StatelessWidget {
 	        用于填充模板的具体元素
       }
         '''),
-    ]);
+      ],
+    );
   }
 }

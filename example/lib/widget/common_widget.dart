@@ -2,15 +2,16 @@ import 'package:example/ex/ex_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class GroupTitle extends StatelessWidget {
   final String title;
   final int fontSize;
+  final FontWeight fontWeight;
 
   const GroupTitle(
     this.title, {
     Key? key,
     this.fontSize = 11,
+    this.fontWeight = FontWeight.w500,
   }) : super(key: key);
 
   @override
@@ -19,7 +20,7 @@ class GroupTitle extends StatelessWidget {
       title,
       style: TextStyle(
         fontSize: fontSize.w,
-        fontWeight: FontWeight.w500,
+        fontWeight: fontWeight,
       ),
     );
   }
@@ -94,6 +95,73 @@ class DescText extends StatelessWidget {
         fontSize: fontSize.w,
         fontWeight: FontWeight.w200,
         color: fontColor,
+      ),
+    );
+  }
+}
+
+class HomeGroupWidget extends StatelessWidget {
+  final int flex;
+  final String title;
+  final String desc;
+  final List<Widget> items;
+
+  const HomeGroupWidget({
+    Key? key,
+    this.flex = 1,
+    required this.title,
+    required this.desc,
+    required this.items,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: flex,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          return Container(
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(6),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 0),
+                  color: Colors.grey,
+                  blurRadius: 3.5,
+                  spreadRadius: 1,
+                ),
+              ],
+              color: Colors.white,
+            ),
+            padding: EdgeInsets.symmetric(
+              vertical: 10.w,
+              horizontal: 20.w,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                GroupTitle(title, fontWeight: FontWeight.w600, fontSize: 20),
+                SizedBox(height: 8.w),
+                Divider(height: 2.w, thickness: 1.w, color: Colors.grey),
+                SizedBox(height: 8.w),
+                DescText(desc, fontSize: 11, fontColor: Colors.black54),
+                SizedBox(height: 10.w),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: items,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

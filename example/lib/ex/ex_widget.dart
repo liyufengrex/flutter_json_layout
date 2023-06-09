@@ -85,11 +85,11 @@ extension ExWidget on Widget {
       padding: padding,
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.blue,
+          color: Colors.grey,
           width: 1.w,
         ),
         color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(1.w)),
+        borderRadius: BorderRadius.all(Radius.circular(3.w)),
       ),
       child: this,
     );

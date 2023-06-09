@@ -1,4 +1,3 @@
-import 'package:example/ex/ex_widget.dart';
 import 'package:example/widget/common_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,29 +24,26 @@ class ModuleApiListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GroupWidget([
-      const GroupTitle('支持的元素控件', fontSize: 15),
-      SizedBox(height: 10.w),
-      const DescText('用于填充 content 组成布局文件'),
-      SizedBox(height: 10.w),
-      const DescText(''),
-      const DescText(''),
-      const DescText(''),
-      SizedBox(height: 21.w),
-      ListView.separated(
-        shrinkWrap: true,
-        itemCount: _apiList.length,
-        itemBuilder: (context, index) => _ItemWidget(
-          apiEnum: _apiList[index],
-        ),
-        separatorBuilder: (context, index) {
-          return Divider(
-            height: 1,
-            color: Theme.of(context).dividerColor,
-          );
-        },
-      ).withContainerBorder()
-    ]);
+    return HomeGroupWidget(
+      flex: 3,
+      title: '支持的元素控件',
+      desc: '用于填充 content 组成布局文件',
+      items: [
+        ListView.separated(
+          shrinkWrap: true,
+          itemCount: _apiList.length,
+          itemBuilder: (context, index) => _ItemWidget(
+            apiEnum: _apiList[index],
+          ),
+          separatorBuilder: (context, index) {
+            return Divider(
+              height: 1,
+              color: Theme.of(context).dividerColor,
+            );
+          },
+        )
+      ],
+    );
   }
 }
 

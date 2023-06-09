@@ -100,22 +100,11 @@ class _DemoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        return Center(
-          // 为了显示出最终打印的尺寸
-          child: Transform.scale(
-            scale: 1 / 1.w,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  JsonLayoutWidget(
-                    jsonString: packageJson,
-                    jsonData: TestConfig.data,
-                  ).withShadow(
-                    blurRadius: 2.5,
-                  )
-                ],
-              ),
-            ),
+        return SizedBox(
+          width: constraints.maxWidth,
+          child: JsonLayoutWidget(
+            jsonString: packageJson,
+            jsonData: TestConfig.data,
           ),
         );
       },
