@@ -1,5 +1,5 @@
 import 'package:flutter_json_layout/src/element/extension/element_extension.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 import 'base/base_element.dart';
 
 ///分割线
@@ -15,7 +15,7 @@ class DividerContainer extends TempBaseElement {
   @override
   DynamicElementType get type => DynamicElementType.divider;
 
-  factory DividerContainer.fromMap(PDDartJson json) {
+  factory DividerContainer.fromMap(SDartJson json) {
     return DividerContainer(
       height: json['height'].getDouble,
       thickness: json['thickness'].getDouble,

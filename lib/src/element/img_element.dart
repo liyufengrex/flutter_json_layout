@@ -1,5 +1,5 @@
 import 'package:flutter_json_layout/src/element/extension/element_extension.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 
 import 'base/base_element.dart';
 
@@ -18,7 +18,7 @@ class ImgContainer extends TempBaseElement {
   @override
   DynamicElementType get type => DynamicElementType.img;
 
-  factory ImgContainer.fromMap(PDDartJson json) {
+  factory ImgContainer.fromMap(SDartJson json) {
     return ImgContainer(
       width: json['width'].doubleValue,
       height: json['height'].doubleValue,

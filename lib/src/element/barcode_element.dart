@@ -1,5 +1,5 @@
 import 'package:flutter_json_layout/src/element/extension/element_extension.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 import 'base/base_element.dart';
 import 'text_element.dart';
 
@@ -18,7 +18,7 @@ class BarcodeContainer extends TempBaseElement {
   @override
   DynamicElementType get type => DynamicElementType.barcode;
 
-  factory BarcodeContainer.fromMap(PDDartJson json) {
+  factory BarcodeContainer.fromMap(SDartJson json) {
     return BarcodeContainer(
       width: json['width'].doubleValue,
       height: json['height'].doubleValue,

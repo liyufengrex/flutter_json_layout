@@ -1,5 +1,5 @@
 import 'package:flutter_json_layout/src/element/extension/element_extension.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 import 'base/base_element.dart';
 import 'text_element.dart';
 
@@ -14,7 +14,7 @@ class AutoSizeTextSpan extends TempBaseElement {
     required this.children,
   }):super(id: id);
 
-  factory AutoSizeTextSpan.fromMap(PDDartJson json) {
+  factory AutoSizeTextSpan.fromMap(SDartJson json) {
     return AutoSizeTextSpan(
       id: json['id'].string,
       text: TextContainer.fromMap(json['text']),

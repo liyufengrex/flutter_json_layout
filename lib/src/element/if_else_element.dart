@@ -1,5 +1,5 @@
 import 'package:flutter_json_layout/src/element/extension/element_extension.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 import '../factory/dynamic_element_parse_tool.dart';
 import 'base/base_element.dart';
 
@@ -18,7 +18,7 @@ class IfElseCandidate extends TempBaseElement {
   @override
   DynamicElementType get type => DynamicElementType.ifElse;
 
-  factory IfElseCandidate.fromMap(PDDartJson json) {
+  factory IfElseCandidate.fromMap(SDartJson json) {
     return IfElseCandidate(
       candidate: json['candidate'].stringValue,
       ifChild: DynamicElementParseTool.buildTempElement(json['ifChild']),

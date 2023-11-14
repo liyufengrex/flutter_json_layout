@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_json_layout/src/element/extension/element_extension.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 import '../factory/dynamic_element_parse_tool.dart';
 import 'base/base_element.dart';
 
@@ -21,7 +21,7 @@ class ColumContainer extends TempBaseElement {
   @override
   DynamicElementType get type => DynamicElementType.colum;
 
-  factory ColumContainer.fromMap(PDDartJson json) {
+  factory ColumContainer.fromMap(SDartJson json) {
     return ColumContainer(
         mainAxisSize: DynamicElementParseTool.matchMainAxisSize(
             json['mainAxisSize'].stringValue),

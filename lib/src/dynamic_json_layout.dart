@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 import 'data_mapping/data_mapping_interface.dart';
 import 'dynamic_json_data_mapping.dart';
 import 'dynamic_temp_model.dart';
@@ -26,7 +26,7 @@ class DynamicJsonLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tempModel = DynamicTempModel.fromMap(
-      PDDartJson(tempJson),
+      SDartJson(tempJson),
     );
     if (tempModel.height <= 0 ||
         tempModel.width <= 0 ||
@@ -43,12 +43,12 @@ class DynamicJsonLayout extends StatelessWidget {
       tempModel,
       onElementSelectTap: onElementSelectTap,
     ).build(
-      PDDartJson(data),
+      SDartJson(data),
     );
   }
 }
 
-class DynamicJsonBuilder extends DynamicTempFactory<PDDartJson> {
+class DynamicJsonBuilder extends DynamicTempFactory<SDartJson> {
   final DynamicTempModel tempConfig;
   final Function(
     DynamicTempModel originTemp,
@@ -61,10 +61,10 @@ class DynamicJsonBuilder extends DynamicTempFactory<PDDartJson> {
   });
 
   @override
-  DynamicDataMappingInterface<PDDartJson> get dataMapping =>
+  DynamicDataMappingInterface<SDartJson> get dataMapping =>
       DynamicJsonDataMapping();
 
-  Widget build(PDDartJson data) {
+  Widget build(SDartJson data) {
     return SizedBox(
       width: tempConfig.width.w,
       height: tempConfig.height.w,

@@ -1,5 +1,5 @@
 import 'package:flutter_json_layout/src/element/extension/element_extension.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 import '../factory/dynamic_element_parse_tool.dart';
 import 'base/base_element.dart';
 
@@ -15,7 +15,7 @@ class PaddingContainer extends TempBaseElement {
   @override
   DynamicElementType get type => DynamicElementType.padding;
 
-  factory PaddingContainer.fromMap(PDDartJson json) {
+  factory PaddingContainer.fromMap(SDartJson json) {
     return PaddingContainer(
       padding: json['padding'].arrayValue.map((e) => e.doubleValue).toList(),
       child: DynamicElementParseTool.buildTempElement(json['child']),

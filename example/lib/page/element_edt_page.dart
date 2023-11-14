@@ -2,7 +2,7 @@ import 'package:example/tool/json_tool.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_json_layout/flutter_json_layout.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 
 /// 元素编辑页面 （目前只支持编辑文本元素）
 class ElementEdtPage extends StatefulWidget {
@@ -120,7 +120,7 @@ class _ElementEdtPageState extends State<ElementEdtPage> {
               final jsonData = JsonTool.toJsonString(edtData);
               Navigator.of(context).pop(
                 DynamicElementParseTool.buildTempElement(
-                  PDDartJson(
+                  SDartJson(
                     jsonData,
                   ),
                 ),

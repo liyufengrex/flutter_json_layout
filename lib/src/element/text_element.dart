@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_json_layout/src/element/extension/element_extension.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 import '../factory/dynamic_element_parse_tool.dart';
 import 'base/base_element.dart';
 
@@ -22,7 +22,7 @@ class TextContainer extends TempBaseElement {
   @override
   DynamicElementType get type => DynamicElementType.text;
 
-  factory TextContainer.fromMap(PDDartJson json) {
+  factory TextContainer.fromMap(SDartJson json) {
     return TextContainer(
       id: json['id'].string,
       key: json['key'].stringValue,

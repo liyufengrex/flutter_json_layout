@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_json_layout/src/element/extension/element_extension.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 import '../element/barcode_element.dart';
 import '../element/base/base_element.dart';
 import '../element/colum_element.dart';
@@ -88,7 +88,7 @@ abstract class DynamicElementParseTool {
   }
 
   /// 解析模板元素
-  static TempBaseElement buildTempElement(PDDartJson json) {
+  static TempBaseElement buildTempElement(SDartJson json) {
     final type = json['type'].stringValue;
     if (type == DynamicElementType.text.key) {
       //文本

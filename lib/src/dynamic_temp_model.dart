@@ -1,5 +1,5 @@
 import 'package:flutter/services.dart';
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 import 'element/base/base_element.dart';
 import 'factory/dynamic_element_parse_tool.dart';
 import 'dart:convert' as convert;
@@ -24,7 +24,7 @@ class DynamicTempModel {
     required this.content,
   });
 
-  factory DynamicTempModel.fromMap(PDDartJson json) {
+  factory DynamicTempModel.fromMap(SDartJson json) {
     return DynamicTempModel(
       id: json['id'].stringValue,
       name: json['name'].stringValue,
@@ -65,6 +65,6 @@ class DynamicTempModel {
       path,
       cache: false,
     );
-    return DynamicTempModel.fromMap(PDDartJson(jsonData));
+    return DynamicTempModel.fromMap(SDartJson(jsonData));
   }
 }

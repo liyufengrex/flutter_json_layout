@@ -1,10 +1,10 @@
-import 'package:pd_dart_json/pd_dart_json.dart';
+import 'package:smart_dart_json/smart_dart_json.dart';
 import 'candidate_mappding/candidate_config.dart';
 import 'data_mapping/data_mapping_interface.dart';
 
-class DynamicJsonDataMapping extends DynamicDataMappingInterface<PDDartJson> {
+class DynamicJsonDataMapping extends DynamicDataMappingInterface<SDartJson> {
   @override
-  String matchKeyValue(PDDartJson data, {required String textKey}) {
+  String matchKeyValue(SDartJson data, {required String textKey}) {
     var matchKey = textKey;
     var matchValue = '';
     var matchValuePre = '';
@@ -52,7 +52,7 @@ class DynamicJsonDataMapping extends DynamicDataMappingInterface<PDDartJson> {
   }
 
   List<String>? parseCandidateElement(
-    PDDartJson data, {
+    SDartJson data, {
     required String candidateValue,
     required String prefix,
     String suffix = CandidateConfig.candidateSuffix,
@@ -76,7 +76,7 @@ class DynamicJsonDataMapping extends DynamicDataMappingInterface<PDDartJson> {
 
   @override
   bool candidate(
-    PDDartJson data, {
+    SDartJson data, {
     required String candidateValue,
   }) {
     if (candidateValue.contains(CandidateConfig.candidateEmpty)) {
